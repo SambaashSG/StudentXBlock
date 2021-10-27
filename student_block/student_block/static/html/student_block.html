@@ -1,0 +1,40 @@
+{% load i18n %}
+<div class="wrapper-comp-settings editor-with-buttons is-active" id="settings-tab">
+    <ul class="list-input settings-list">
+        <li class="field comp-setting-entry is-set">
+            <div class="wrapper-comp-setting">
+                <label class="label setting-label" for="edit_display_name">{% trans "Display Name" %}</label>
+                <input class="input setting-input" id="edit_display_name" value="{{ display_name }}" type="text">
+            </div>
+            <span class="tip setting-help">{% trans "This name appears in the horizontal navigation at the top of the page." %}</span>
+        </li>
+
+        <li class="field comp-setting-entry is-set">
+            <div class="wrapper-comp-setting">
+                <label class="label setting-label" for="edit_host_url">{% trans "ONLINE-ASSESSMENT URL" %}</label>
+                <input class="input setting-input" id="edit_host_url" value="{{ url }}" type="text">
+            </div>
+            <span class="tip setting-help">{% trans "The URL for your GO TO Online-assessment." %}</span>
+        </li>
+
+        <li class="field comp-setting-entry is-set">
+            <div class="wrapper-comp-setting">
+                <label class="label setting-label" for="btn_edit_text">{% trans "Button Value" %}</label>
+                <input class="input setting-input" id="btn_edit_text" value="{{ button_text }}" type="text">
+            </div>
+            <span class="tip setting-help">{% trans "The text for Button text." %}</span>
+        </li>
+
+    </ul>
+
+    <div class="xblock-actions">
+        <ul>
+            <li class="action-item">
+                <a href="#" class="button action-primary action-save">{% trans "Save" %}</a>
+            </li>
+            <li class="action-item">
+                <a href="#" class="button action-cancel">{% trans "Cancel" %}</a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+{% load i18n %}
+<div class="student_block">
+<!--    <h2>{{ display_name }}</h2>-->
+    <div>
+        {{ is_staff }}
+        {{ is_superuser }}
+        <a href="{{ url }}?user_role={{ user_role }}"><button>{{ button_text }}</button></a>
+    </div>
+</div>

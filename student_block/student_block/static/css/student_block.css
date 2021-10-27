@@ -1,0 +1,20 @@
+/* CSS for StudentXBlock */
+
+.student_block_block .count {
+    font-weight: bold;
+}
+
+.student_block_block p {
+    cursor: pointer;
+}
+
+header{
+    display: none;
+}
+.debug{
+    display: none;
+}
+.main, .preview{
+    margin: 0 !important;
+    padding: 0 !important;
+}
