@@ -1,4 +1,4 @@
-"""Setup for student_block XBlock."""
+"""Setup for online_assessment XBlock."""
 
 
 import os
@@ -23,20 +23,20 @@ def package_data(pkg, roots):
 
 
 setup(
-    name='student_block-xblock',
+    name='online_assessment-xblock',
     version='0.1',
-    description='student_block XBlock',   # TODO: write a better description.
+    description='online_assessment XBlock',   # TODO: write a better description.
     license='UNKNOWN',          # TODO: choose a license: 'AGPL v3' and 'Apache 2.0' are popular.
     packages=[
-        'student_block',
+        'online_assessment',
     ],
     install_requires=[
         'XBlock',
     ],
     entry_points={
         'xblock.v1': [
-            'student_block = student_block:StudentXBlock',
+            'online_assessment = online_assessment:StudentXBlock',
         ]
     },
-    package_data=package_data("student_block", ["static", "public"]),
+    package_data=package_data("online_assessment", ["static", "public"]),
 )

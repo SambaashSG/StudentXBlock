@@ -88,7 +88,7 @@ class StudentXBlock(XBlock):
             'url': self.url,
             'button_text': self.btnText,
         }
-        html = self.render_template("student_block.html", context)
+        html = self.render_template("online_assessment.html", context)
         frag = Fragment(html.format(self=self))
         frag.add_javascript(self.resource_string("static/js/src/student_block.js"))
         frag.initialize_js('StudentXBlock')
