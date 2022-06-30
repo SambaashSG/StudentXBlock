@@ -1,5 +1,6 @@
 """TO-DO: Write a description of what this XBlock is."""
 
+import base64
 import os
 import pkg_resources
 from django.template import Context
@@ -67,12 +68,17 @@ class StudentXBlock(XBlock):
             user_role = "learner_admin"
         elif user.is_staff:
             user_role = "assessor"
+        course_id=self.block_course_id
+        print("course_id-----------------------:", course_id)
+        encoded_course_id= encode_decode_str(course_id)
+        print("en_course_id-----------------------:", encoded_course_id)
 
         context = {
             'url': self.url,
             'display_name': self.display_name,
             'button_text': self.btnText,
-            'user_role': user_role
+            'user_role': user_role,
+            'encoded_course_id': encoded_course_id
         }
         html = self.render_template("student_block_view.html", context)
         frag = Fragment(html.format(self=self))
@@ -101,3 +107,8 @@ class StudentXBlock(XBlock):
         self.btnText = data['btn_text']
 
         return {'result': 'success'}
+
+def encode_decode_str(value):
+    response_value = str(value).encode('utf-8')
+    response_value = base64.b64encode(response_value).decode('utf-8')
+    return response_value

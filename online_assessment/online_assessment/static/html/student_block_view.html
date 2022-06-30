@@ -4,6 +4,6 @@
     <div>
         {{ is_staff }}
         {{ is_superuser }}
-        <a href="{{ url }}?user_role={{ user_role }}"><button>{{ button_text }}</button></a>
+        <a href="{{ url }}?user_role={{ user_role }}&course_id={{encoded_course_id}}"><button>{{ button_text }}</button></a>
     </div>
 </div>
