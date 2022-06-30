@@ -68,9 +68,9 @@ class StudentXBlock(XBlock):
             user_role = "learner_admin"
         elif user.is_staff:
             user_role = "assessor"
-        course_id=self.block_course_id
+        course_id=self.course_id
         print("course_id-----------------------:", course_id)
-        encoded_course_id= encode_decode_str(course_id)
+        encoded_course_id= encode_str(course_id)
         print("en_course_id-----------------------:", encoded_course_id)
 
         context = {
@@ -108,7 +108,7 @@ class StudentXBlock(XBlock):
 
         return {'result': 'success'}
 
-def encode_decode_str(value):
+def encode_str(value):
     response_value = str(value).encode('utf-8')
     response_value = base64.b64encode(response_value).decode('utf-8')
     return response_value
